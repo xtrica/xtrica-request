@@ -1,0 +1,11 @@
+{
+  "name": "xtrica-request",
+  "version": "1.0.1513131952",
+  "description": "Xtrica Request: A javascript class for XHR.",
+  "main": "index.js",
+  "author": {
+    "name": "Xtrica",
+    "url": "https://xtrica.com"
+  },
+  "license": "MIT"
+}
