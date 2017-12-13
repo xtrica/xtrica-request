@@ -1,6 +1,6 @@
 {
   "name": "xtrica-request",
-  "version": "1.0.1513179399",
+  "version": "1.0.1513199081",
   "description": "Xtrica Request: A javascript class for XHR.",
   "main": "index.js",
   "author": {
