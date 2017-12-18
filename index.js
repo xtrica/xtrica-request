@@ -1,11 +1,12 @@
 /*
- * xtrica-request v1.0.1513199081 (https://xtrica.com)
+ * xtrica-request v1.0.1513639957 (https://xtrica.com)
  * Copyright 2017 (or 2150?) Xtrica
  * Licensed under MIT
  */
 const dispatchRequest=(type,url,data)=>{return new Promise((resolve,reject)=>{try{let xhr=new XMLHttpRequest()
 xhr.open(type,url,!0)
 xhr.setRequestHeader('Accept','application/json')
+xhr.onerror=()=>{reject(0)}
 xhr.onload=()=>{if(xhr.status>=200&&xhr.status<300){resolve(xhr.response?JSON.parse(xhr.response):{})}else{reject(xhr.status)}}
 if(type.toLowerCase()==='post'){let form=new FormData()
 for(let property in data){if(data.hasOwnProperty(property)){if(data[property].hasOwnProperty('files')){form.append(property,data[property].files[0])}else{form.append(property,data[property])}}}
@@ -14,6 +15,7 @@ xhr.send(JSON.stringify(data))}}catch(err){reject(err)}})}
 const fetchRequest=(type,url)=>{return new Promise((resolve,reject)=>{try{let xhr=new XMLHttpRequest()
 xhr.open(type,url,!0)
 xhr.setRequestHeader('Accept','application/json')
+xhr.onerror=()=>{reject(0)}
 xhr.onload=()=>{if(xhr.status>=200&&xhr.status<300){resolve(xhr.response?JSON.parse(xhr.response):{})}else{reject(xhr.status)}}
 xhr.send()}catch(err){reject(err)}})}
 const requestDelete=(url)=>{return fetchRequest('DELETE',url)}
